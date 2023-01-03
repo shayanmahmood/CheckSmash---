@@ -192,9 +192,9 @@ li {
     transition: transform .2s ease
 }
 
-.settings:hover .task-menu {
+/* .settings:hover .task-menu {
     transform: scale(1);
-}
+} */
 
 .task-box .task:last-child .task-menu {
     bottom: 0;
