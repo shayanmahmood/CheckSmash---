@@ -1,4 +1,4 @@
-/*
+
 const disabledKeys = ["u", "I"];
 const showAlert = e => {
     e.preventDefault();
@@ -12,4 +12,3 @@ document.addEventListener("keydown", e => {
         showAlert(e);
     }
 });
-*/
