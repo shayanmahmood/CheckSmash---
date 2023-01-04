@@ -10,16 +10,18 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(135deg, #4AB1FF, #2D5CFE)
+    background-image: linear-gradient(135deg, rgba(247, 246, 207, 0.8), rgba(244, 207, 223, 0.8),rgba(87, 132, 186, 0.8),rgba(154,200,235,0.8)),url("../icon\wallpaperflare.com_wallpaper.jpg");
+    background-size: cover;
+
 }
 
 ::selection {
     color: #fff;
-    background: #3c87ff
+    background: hotpink;
 }
 
 .wrapper {
-    max-width: 405px;
+    max-width: 430px;
     padding: 28px 0 30px;
     margin: 137px auto;
     background: #fff;
@@ -52,7 +54,7 @@ body {
 .task-input input:focus,
 .task-input input.active {
     padding-left: 52px;
-    border: 2px solid #3c87ff
+    border: 2px solid hotpink;
 }
 
 .task-input input::placeholder {
@@ -83,14 +85,14 @@ li {
 }
 
 .filters span.active {
-    color: #3c87ff
+    color: hotpink;
 }
 
 .controls .clear-btn {
     border: none;
     opacity: .6;
     outline: none;
-    color: #fff;
+    color: white;
     cursor: pointer;
     font-size: 13px;
     padding: 7px 13px;
@@ -98,7 +100,7 @@ li {
     letter-spacing: .3px;
     pointer-events: none;
     transition: transform .25s ease;
-    background: linear-gradient(135deg, #1798fb 0%, #2D5CFE 100%)
+    background: linear-gradient(135deg, hotpink 100%, #f7f6cf 0%)
 }
 
 .clear-btn.active {
@@ -191,10 +193,6 @@ li {
     box-shadow: 0 0 6px rgba(0, 0, 0, .15);
     transition: transform .2s ease
 }
-
-/* .settings:hover .task-menu {
-    transform: scale(1);
-} */
 
 .task-box .task:last-child .task-menu {
     bottom: 0;

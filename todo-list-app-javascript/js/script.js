@@ -1,14 +1,20 @@
-const  taskInput = document.querySelector(".task-input input"),
-       taskBox = document.querySelector(".task-box"),
-       filters = document.querySelectorAll(".filters span");
-       clearAll = document.querySelector(".clear-btn");
-                                                            // declaring constents values
+const taskInput = document.querySelector(".task-input input"),
+    taskBox = document.querySelector(".task-box"),
+    filters = document.querySelectorAll(".filters span"),
+    tooltipTxt = document.querySelector(".tooltipTxt"),
+clearAll = document.querySelector(".clear-btn");
+// declaring constents values
 
 let editId;
 let isEditedTask = false;
 let todos = JSON.parse(localStorage.getItem("todo-list"));
 
-                                                            // declaring non-constents values 
+// declaring non-constents values 
+
+setInterval(() => {
+tooltipTxt.parentElement.style.display = "none";
+}, 15000);
+
 filters.forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelector("span.active").classList.remove("active");
@@ -18,7 +24,7 @@ filters.forEach(btn => {
 })
 
 
-                                                            // SettingUp The filters btn functionality 
+// SettingUp The filters btn functionality 
 function showTodo(filters) {
     let li = "";
     if (todos) {
@@ -59,7 +65,7 @@ function showMenu(selectedTask) {
     })
 }
 
-                                                            // Showing Menu on clicking the button (3dots) 
+// Showing Menu on clicking the button (3dots) 
 function updateStatus(selectedTask) {
     let taskName = selectedTask.parentElement.lastElementChild;
     if (selectedTask.checked) {
@@ -72,22 +78,22 @@ function updateStatus(selectedTask) {
     }
     localStorage.setItem("todo-list", JSON.stringify(todos));
 }
- 
-                                                            // Updating Staus in localStorage
+
+// Updating Staus in localStorage
 function editTask(taskId, textName) {
     editId = taskId;
     isEditedTask = true;
     taskInput.value = textName;
     taskInput.focus();
     taskInput.classList.add("active");
-} 
-                                                            // SettingUp the edit functionality                                                        
+}
+// SettingUp the edit functionality                                                        
 function deleteTask(deleteId) {
     todos.splice(deleteId, 1);
     localStorage.setItem("todo-list", JSON.stringify(todos));
     showTodo();
 }
-                                                            // SettingUp the Deleted functionality
+// SettingUp the Deleted functionality
 clearAll.addEventListener("click", () => {
     isEditedTask = false;
     todos.splice(0, todos.length);
@@ -96,7 +102,7 @@ clearAll.addEventListener("click", () => {
 });
 
 
-                                                            //  SettingUp the clearBtn functionality
+//  SettingUp the clearBtn functionality
 taskInput.addEventListener("keyup", e => {
     let userTask = taskInput.value.trim();
     if (e.key == "Enter") {
